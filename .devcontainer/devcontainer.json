@@ -1,0 +1,28 @@
+{
+	"name": "Blazor .NET 8",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
+		},
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+	"forwardPorts": [5000, 5001, 5002],
+	"postCreateCommand": "dotnet restore",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"ms-dotnettools.blazorwasm-companion",
+				"ms-dotnettools.vscode-dotnet-runtime",
+				"formulahendry.dotnet-test-explorer",
+				"github.copilot",
+				"github.copilot-chat",
+				"esbenp.prettier-vscode"
+			]
+		}
+	}
+}
