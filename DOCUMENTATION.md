@@ -40,6 +40,7 @@ This file defines the container configuration, features, and Visual Studio Code 
     "vscode": {
       "extensions": [
         "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
         "ms-dotnettools.blazorwasm-companion",
         "ms-dotnettools.vscode-dotnet-runtime",
         "formulahendry.dotnet-test-explorer",
@@ -57,7 +58,7 @@ Key components:
 - **Features**: Adding Git and Node.js using the standardized devcontainer features
 - **Port forwarding**: Exposing ports 5000-5002 for the Blazor app
 - **Post-create command**: Running `dotnet restore` to fetch dependencies
-- **VS Code extensions**: Installing extensions to support .NET/Blazor development
+- **VS Code extensions**: Installing extensions to support .NET/Blazor development, including C# Dev Kit for enhanced C# language support
 
 #### `.devcontainer/Dockerfile`
 
@@ -98,6 +99,8 @@ Key components:
 The dev container uses the standardized Dev Containers features system:
 
 - **Git**: An up-to-date version of Git, built from source as needed, is pre-installed and available on the `PATH`
+  - Git user configuration is set up automatically via environment variables or defaults
+  - You can customize by setting `GIT_USER_NAME` and `GIT_USER_EMAIL` environment variables
 - **Node.js**: `node`, `npm`, and `eslint` are pre-installed and available on the `PATH` for JavaScript development
 
 ## Creating the Blazor Project

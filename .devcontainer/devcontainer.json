@@ -5,23 +5,20 @@
 		"context": ".."
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "lts"
-		},
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
 	"forwardPorts": [5000, 5001, 5002],
-	"postCreateCommand": "dotnet restore",
+	"postCreateCommand": "dotnet restore && git config --global user.name \"${GIT_USER_NAME:-Your Name}\" && git config --global user.email \"${GIT_USER_EMAIL:-your.email@example.com}\"",
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-dotnettools.csharp",
+				"ms-dotnettools.csdevkit",
 				"ms-dotnettools.blazorwasm-companion",
 				"ms-dotnettools.vscode-dotnet-runtime",
 				"formulahendry.dotnet-test-explorer",
 				"github.copilot",
-				"github.copilot-chat",
-				"esbenp.prettier-vscode"
+				"github.copilot-chat"
 			]
 		}
 	}

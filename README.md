@@ -79,7 +79,7 @@ The dev container is configured with HTTPS certificates. The application can be 
 
 The dev container comes with pre-configured VS Code extensions:
 
-- C# for language support
+- C# and C# Dev Kit for comprehensive language support
 - Blazor WASM Companion for Blazor development
 - .NET Core Test Explorer for running tests
 - GitHub Copilot for AI-assisted development
